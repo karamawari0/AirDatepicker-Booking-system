@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      id="viewport"
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link href="./css.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./air-datepicker.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta
+      name="description"
+      content="Недорогая гостиница в частном секторе Анапы."
+    />
+    <meta
+      name="keywords"
+      content="Гостиница, гостевой дом, с животными, недорого, Анапа, Самбурова"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
+      integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body>
+    <form id="form" method="post">
+      <div class="wrapper-с">
+        <div class="inputBox" id="name_grid">
+          <input
+            pattern="^[а-яА-ЯёЁ\s]+$"
+            maxlength="22"
+            minlength="4"
+            data-id="name"
+            type="text"
+            placeholder="Имя"
+            title="Пожалуйста, используйте кириллицу в имени"
+            required
+          />
+          <span></span>
+        </div>
+
+        <div class="inputBox" id="telephone_grid">
+          <input
+            id="telephone_input"
+            pattern="^(?!0+$)(\+\d{1,3}[- ]?)?(?!0+$)\d{10}$"
+            title="Формат: +7-9xx-xxx-xx-xx"
+            type="text"
+            required="required"
+            placeholder="Номер телефона"
+            minlength="11"
+            maxlength="16"
+          />
+        </div>
+
+        <div class="inputBox guests no_carette" id="guests_grid">
+          <input
+            type="text"
+            id="special"
+            placeholder="выберите гостей"
+            title="Укажите количество гостей"
+            onkeypress="return false;"
+            autocomplete="off"
+            onpaste="return false;"
+            required
+          />
+
+          <div id="mini">
+            <div class="itemTwo">
+              <div>Взрослые</div>
+            </div>
+            <div class="item">
+              <i class="gg-remove disactivated"
+                ><img class="btn_icon" src="img/btn_minus.svg"
+              /></i>
+              <div class="number">0</div>
+              <i class="gg-add"
+                ><img class="btn_icon" src="img/btn_plus.svg"
+              /></i>
+            </div>
+            <div class="itemTwo">
+              <div>Дети до 7 лет</div>
+              <span>скидка 30%</span>
+            </div>
+            <div class="item">
+              <i class="gg-remove disactivated"
+                ><img class="btn_icon" src="img/btn_minus.svg"
+              /></i>
+              <div class="number">0</div>
+              <i class="gg-add"
+                ><img class="btn_icon" src="img/btn_plus.svg"
+              /></i>
+            </div>
+            <div class="itemTwo">
+              <div>Дети до 3 лет</div>
+              <span>бесплатно</span>
+            </div>
+            <div class="item">
+              <i class="gg-remove disactivated"
+                ><img class="btn_icon" src="img/btn_minus.svg"
+              /></i>
+              <div class="number">0</div>
+              <i class="gg-add"
+                ><img class="btn_icon" src="img/btn_plus.svg"
+              /></i>
+            </div>
+
+            <div class="itemTwo">
+              <div></div>
+              <span></span>
+            </div>
+            <div class="item" id="close">Закрыть</div>
+          </div>
+        </div>
+
+        <div class="inputBox no_carette" id="date_grid">
+          <input
+            data-id="checkinout"
+            class="checkinout"
+            type="text"
+            id="airdatepicker"
+            class="form-control"
+            placeholder="дата заезда и выезда"
+            title="Не забудьте указать даты"
+            onkeypress="return false;"
+            onpaste="return false;"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <fieldset id="checkbox_grid">
+          <div class="checkbox-wrapper-29">
+            <label class="checkbox">
+              <input type="checkbox" required checked class="checkbox__input" />
+              <span class="checkbox__label"></span>
+              ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="inputBox" id="room_grid">
+          <select id="roomSelect" name="cars">
+            <option value="double">2-местный</option>
+            <option value="triple">3-местный</option>
+            <option value="cuatro">4-местный</option>
+          </select>
+        </div>
+
+        <button
+          class="actual-page-name"
+          type="submit"
+          target="_blank"
+          rel="noreferrer noopener"
+          id="button_grid"
+          onclick="sendMessage()"
+        >
+          ОТПРАВИТЬ ЗАЯВКУ
+          <div id="price">ЗАПОЛНИТЕ ПОЛЯ, ЧТОБЫ УЗНАТЬ ЦЕНУ</div>
+        </button>
+      </div>
+    </form>
+  </body>
+
+  <script src="./buttons.js"></script>
+  <script src="./air-datepicker.js"></script>
+  <script src="./js.js"></script>
+</html>

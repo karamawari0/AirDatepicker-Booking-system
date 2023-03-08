@@ -1,0 +1,345 @@
+@font-face {
+  font-family: Haur;
+  src: url(fonts/Hauora-Light.ttf);
+}
+@font-face {
+  font-family: Hauora-Regular;
+  src: url(fonts/Hauora-Regular.ttf);
+}
+:root {
+  --font-size-medium: clamp(8px, 1rem, 1.2rem);
+  --font-size-small: clamp(8px, 0.8rem, 0.8rem);
+  --yellowish-color: rgb(247, 246, 242);
+  --blackish-color: rgb(29, 29, 29);
+}
+
+html {
+  font-family: Haur;
+  height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  color: var(--blackish-color);
+  scroll-behavior: smooth !important;
+}
+body {
+  background-color: var(--yellowish-color);
+  scroll-behavior: smooth !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+#mini.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+span {
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  gap: 10px;
+  padding: 1.2vw 7% 0 7%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  min-height: 80vh;
+}
+.page-name {
+  min-width: 26%;
+  padding-right: clamp(20px, 2.1vh, 2.1vh);
+}
+.actual-page-name {
+  font-family: Hauora-Regular;
+  font-size: clamp(12px, 1.6vw, 1.6vw);
+  border-radius: 20rem;
+  background-color: rgba(76, 175, 80, 0);
+  justify-content: center;
+  text-align: center;
+  justify-self: center;
+  padding: 8px 18px;
+  border: solid 1px #000;
+}
+button.actual-page-name {
+  font-size: clamp(12px, 1vw, 1vw);
+  width: 100%;
+  padding: 10px;
+}
+.price_button {
+  border: solid 1.4px #1d1d1d;
+}
+.price-description {
+  font-size: clamp(16px, 1.4vw, 1.4vw);
+  padding: 0;
+  margin: 0;
+  padding: 0 0 4% 34%;
+}
+.icon {
+  width: clamp(30px, 2.8vw, 2.8vw);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
+}
+.btn_icon {
+  user-select: none;
+  width: clamp(12px, 1vw, 1vw);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0;
+}
+.gg-add,
+.gg-remove {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.inputBox input:focus:invalid {
+  border: red 1px solid;
+}
+.no_carette {
+  caret-color: transparent;
+}
+.inputBox input:valid {
+  border: #88d888 1px solid;
+}
+.inputBox span {
+  font-size: var(--font-size-small);
+}
+#airdatepicker {
+  cursor: pointer;
+}
+.wrapper-с {
+  justify-items: stretch;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "name telephone"
+    "room date"
+    "guests checkbox"
+    "button button"
+    "price price";
+}
+
+#room_grid {
+  grid-area: room;
+  font-family: "Hauora-Regular";
+  font-size: var(--font-size-medium);
+  width: 100%;
+  background-color: ;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  padding: 10px 0px 10px 0px;
+  outline: none;
+}
+#price {
+  grid-area: price;
+  font-size: 10px;
+  color: grey;
+}
+#checkbox_grid {
+  grid-area: checkbox;
+}
+#guests_grid {
+  grid-area: guests;
+}
+#name_grid {
+  grid-area: name;
+}
+#telephone_grid {
+  grid-area: telephone;
+}
+#date_grid {
+  grid-area: date;
+}
+#button_grid {
+  grid-area: button;
+}
+#airdatepicker {
+  font-size: 16px;
+}
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+.inputBox input[type="tel"],
+.inputBox input[type="text"] {
+  box-sizing: border-box;
+  padding-left: 6px;
+}
+.inputBox input,
+.inputBox select {
+  font-family: Hauora-Regular;
+  font-size: var(--font-size-medium);
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  padding: 10px 0 10px 0;
+  outline: 0;
+}
+#form {
+  margin-top: 20px;
+}
+#mini {
+  transition: 0.2s;
+  opacity: 0;
+  transform: translateX(50%);
+  width: 100%;
+  font-family: Hauora-Regular;
+  font-size: var(--font-size-medium);
+  grid-template-columns: 50% 50%;
+  background-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  outline: 0;
+  align-items: center;
+  display: grid;
+  visibility: hidden;
+  position: absolute;
+  right: 50%;
+  z-index: 99;
+}
+.disactivated {
+  filter: invert(100%) sepia(0) saturate(4736%) hue-rotate(107deg)
+    brightness(93%) contrast(89%);
+  pointer-events: none;
+}
+.number {
+  padding: 0 3px;
+  min-width: 10px;
+  max-width: 10px;
+  justify-self: center;
+  align-self: center;
+}
+.item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+  justify-self: end;
+}
+.itemTwo {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+}
+.inputBox.guests:after {
+  font-family: Inter, sans-serif;
+  content: "для кого";
+  position: absolute;
+  top: 0;
+  left: 4px;
+  font-size: var(--font-size-small);
+}
+.inputBox.guests input {
+  color: #969696;
+}
+.itemTwo span {
+  font-size: var(--font-size-small);
+  color: #646464;
+}
+.checkinout {
+  width: 250px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  outline: 0;
+}
+#close {
+  cursor: pointer;
+  user-select: none;
+  font-style: bold;
+  font-size: var(--font-size-medium);
+}
+#special {
+  cursor: pointer;
+}
+fieldset {
+  width: 100%;
+  border: 1px var(--yellowish-color) solid;
+  padding: 0;
+  margin: 0;
+}
+#checkbox_grid input:invalid {
+  outline: 1px solid #e53935;
+  border-radius: 5px;
+}
+fieldset:invalid {
+  color: #e53935 !important;
+  border: #e53935 1px solid !important;
+}
+.checkbox-wrapper-29 {
+  --size: 1rem;
+  --background: var(--yellowish-color);
+  font-size: var(--font-size-small);
+}
+.checkbox-wrapper-29 *,
+.checkbox-wrapper-29 ::after,
+.checkbox-wrapper-29 ::before {
+  box-sizing: border-box;
+}
+.checkbox-wrapper-29 input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+  cursor: pointer;
+}
+label {
+  user-select: none;
+}
+.checkbox-wrapper-29 .checkbox__label {
+  width: var(--size);
+}
+.checkbox-wrapper-29 .checkbox__label:before {
+  content: " ";
+  display: block;
+  height: var(--size);
+  width: var(--size);
+  position: absolute;
+  top: calc(var(--size) * 0.125);
+  left: 0;
+  background: var(--background);
+}
+.checkbox-wrapper-29 .checkbox__label:after {
+  content: " ";
+  display: block;
+  height: var(--size);
+  width: var(--size);
+  border: calc(var(--size) * 0.14) solid #000;
+  transition: 0.2s;
+  position: absolute;
+  top: calc(var(--size) * 0.125);
+  left: 0;
+  background: var(--background);
+}
+.checkbox-wrapper-29 .checkbox__label:after {
+  transition: 0.1s ease-in-out;
+}
+.checkbox-wrapper-29 .checkbox__input:checked ~ .checkbox__label:after {
+  border-top-style: none;
+  border-right-style: none;
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  height: calc(var(--size) * 0.5);
+  border-color: #0a9918;
+}
+.checkbox-wrapper-29 .checkbox {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.checkbox-wrapper-29 .checkbox__label:after:active,
+.checkbox-wrapper-29 .checkbox__label:after:hover {
+  border-color: #0a9918;
+}
+.checkbox-wrapper-29 .checkbox__label {
+  margin-right: calc(var(--size) * 0.45);
+}
