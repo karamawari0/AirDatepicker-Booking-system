@@ -1,4 +1,4 @@
-# AirDatepicker-Booking-system
+# AirDatepicker-TelegramBot-Booking-system
 
 ![image](https://github.com/karamawari0/AirDatepicker-TelegramBot-Booking-system/assets/89845201/8f1d10bb-b896-4903-ad5a-4c4acb60e191)
 
